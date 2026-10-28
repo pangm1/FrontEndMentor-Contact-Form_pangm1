@@ -3,50 +3,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="Contact Form">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
   <title>Frontend Mentor | Contact form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./styles/main.css">
+  <script defer src="./scripts/main.js"></script>
 </head>
 <body>
+  <main>
+    <form autocomplete="on" name="contact" class="form-contact">
+      <h1 class="title">
+        Contact Us
+      </h1>
 
-  Contact Us
+      <div class="form-group">
+        <label for="first-name">
+          First Name
+          <span class="required" aria-hidden="true" class="required">*</span>
+        </label>
+        <input id="first-name" name="first-name" type="text" aria-describedby="first-name-required">
+        <p id="first-name-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+      </div>
 
-  First Name
-  This field is required
+      <div class="form-group">
+        <label for="last-name">
+          Last Name
+          <span class="required" aria-hidden="true" class="required">*</span>
+        </label>
+        <input id="last-name" name="last-name" type="text" aria-describedby="last-name-required">
+        <p id="last-name-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+      </div>
 
-  Last Name
-  This field is required
+      <div class="form-group">
+        <label for="email">
+          Email Address
+          <span class="required" aria-hidden="true" class="required">*</span>
+        </label>
+        <input id="email" name="email" type="text" aria-describedby="email-required">
+        <p id="email-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+        <div class="hidden validation" hidden="true">
+          <p id="email-validation" class="hidden" aria-hidden="true" aria-live="polite">
+            Please enter a valid email address
+          </p>
+        </div>
+      </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <div class="form-group">
+        <fieldset aria-describedby="query-required">
+          <legend>
+            Query Type
+            <span class="required" aria-hidden="true" class="required">*</spa>
+          </legend>
+          <div class="field radio">
+            <input type="radio" name="query" id="query-general">
+            <label for="query-general">
+              General Enquery
+            </label>
+          </div>
+          <div class="field radio">
+            <input type="radio" name="query" id="query-support">
+            <label for="query-support">
+              Support Request
+            </label>
+          </div>
+        </fieldset>
+        <p id="query-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+        <div class="hidden validation" hidden="true">
+          <p id="query-validation" class="hidden" aria-hidden="true" aria-live="polite">
+            Please select a query type
+          </p>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">
+          Message
+          <span class="required" aria-hidden="true" class="required">*</span>
+        </label>
+        <textarea name="message" id="message" aria-describedby="message-required" rows="10"></textarea>
+        <p id="message-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+      </div>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+      <div class="form-group">
+        <div class="field consent">
+          <input type="checkbox" name="consent" id="consent">
+          <label for="consent">
+            <div class="element">
+              I consent to being contacted by the team
+              <span id="consent-required" aria-hidden="true" class="required">*</span>
+            </div>
+          </label>
+        </div>
+        
+        <p id="consent-required" class="hidden" aria-hidden="true">
+          This field is required
+        </p>
+        <div class="hidden validation" hidden="true">
+          <p id="consent-validation" class="hidden" aria-hidden="true" aria-live="polite">
+            To submit this form, please consent to being contacted
+          </p>
+        </div>
+      </div>
 
-  Message
-  This field is required
+      <button type="submit" class="submit">
+        Submit
+      </button>
+    </form>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
+    <p class="success hidden" aria-live="polite" hidden>
+      Message Sent!
+      Thanks for completing the form. We'll be in touch soon!
+    </p>
+  </main>
   
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <p>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    </p>
+    <p>
+      Coded by <a href="https://www.frontendmentor.io/profile/pangm1">Michael Pang</a>.
+    </p>
   </footer>
 </body>
 </html>
