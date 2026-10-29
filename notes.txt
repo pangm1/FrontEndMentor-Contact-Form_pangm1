@@ -4,3 +4,4 @@ style for desktop sizes
 test using mobile
 perform validation and update error states (JS)
 implement CSS variables for the template
+make emails case-insensitive

@@ -91,7 +91,7 @@
           Message
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
-        <textarea name="message" id="message" aria-describedby="message-required" rows="10"></textarea>
+        <textarea name="message" id="message" aria-describedby="message-required"></textarea>
         <p id="message-required" class="hidden" aria-hidden="true">
           This field is required
         </p>
@@ -99,13 +99,13 @@
 
       <div class="form-group">
         <div class="field consent">
-          <input type="checkbox" name="consent" id="consent">
           <label for="consent">
             <div class="element">
               I consent to being contacted by the team
               <span id="consent-required" aria-hidden="true" class="required">*</span>
             </div>
           </label>
+          <input type="checkbox" name="consent" id="consent">
         </div>
         
         <p id="consent-required" class="hidden" aria-hidden="true">
@@ -123,10 +123,16 @@
       </button>
     </form>
 
-    <p class="success hidden" aria-live="polite" hidden>
-      Message Sent!
-      Thanks for completing the form. We'll be in touch soon!
-    </p>
+    <section class="success" aria-live="polite">
+      <p class="state">
+        Message Sent!
+        
+      </p>
+      <p class="message">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+    </section>
+    
   </main>
   
   <footer class="attribution">
