@@ -1,7 +1,8 @@
 test functionality of form using screenreader, keyboard, and mouse
 finish styling success toast message
 style for desktop sizes
+perform validation and update error/required states (JS)
 test using mobile
-perform validation and update error states (JS)
 implement CSS variables for the template
 make emails case-insensitive
+add animations to state changes

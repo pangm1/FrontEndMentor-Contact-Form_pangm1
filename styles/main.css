@@ -247,8 +247,33 @@ form {
         background: color-mix(in srgb, var(--green-600) 100%, black 75%);
     }
 
-    /* error and required states */
-    
+    /* error / required states */
+    .error.form-group {
+        input, textarea {
+            border-color: var(--red);
+        }
+
+        .error-text {
+            width: auto;
+            height: auto;
+            margin-top: 0.5rem;
+            position: static;
+            color: var(--red);
+        }
+
+        &:has(.consent) {
+            input {
+                border-color: var(--grey-500);
+            }
+            .error-text {
+                margin-top: 0;
+            }
+        }
+
+        &:has(.field.radio) input {
+            border-color: inherit;
+        }
+    }
 }
 
 .success {
