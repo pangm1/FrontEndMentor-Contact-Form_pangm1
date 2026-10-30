@@ -1,5 +1,3 @@
-console.log(document);
-
 const contactForm = document.forms["contact"];
 const firstName = contactForm.elements["first-name"];
 const lastName = contactForm.elements["last-name"];
@@ -8,9 +6,15 @@ const query = contactForm.elements["query-radio-group"];
 const message = contactForm.elements["message"];
 const consent = contactForm.elements["consent"];
 
+const formErrorText = document.createElement("list");
+formErrorText.setAttribute("aria-live", "assertive");
+
 const formGroups = Array.from(contactForm.getElementsByClassName('form-group'));
 
 const success = document.querySelector('.success');
+
+const errorDiv = contactForm.querySelector(".error-div");
+const errorList = errorDiv.querySelector("& > ul");
 
 // console.log(contactForm);
 // console.log(firstName);
@@ -26,6 +30,9 @@ addEventListener("submit", submitForm);
 function submitForm(event) {
     event.preventDefault();
     // console.log("submit");
+    success.classList.add("hidden");
+    errorList.textContent = '';
+    errorDiv.setAttribute('aria-hidden', 'true');
 
     Array.from(contactForm.elements).forEach(
         (element) => {
@@ -68,26 +75,63 @@ function submitForm(event) {
         contactForm.reset();
 
         success.classList.remove('hidden');
-        success.setAttribute('aria-hidden', 'false');
+        success.removeAttribute('aria-hidden');
     }
 }
 
 function validateInput(test) {
     const validate = (event) => {
+        const formGroup = event.detail.errorElement;
+        const label = formGroup.querySelector("label, legend");
+        const errorText = formGroup.querySelector(".error-text");
+
         try {
+            resetError(formGroup, label, errorText);
+
+
             const result = test(event.detail.value);
             console.log("Result: ", result);
 
             if (!result) {
                 throw new Error();
             }
-            
-            event.detail.errorElement.classList.remove('error')
         } catch (error) {
-            event.detail.errorElement.classList.add('error');
+            addError(formGroup, label, errorText);
         }
     };
     return validate;
+}
+
+
+function resetError(formGroup, label, errorText) {
+    formGroup.classList.remove('error');
+
+    label.removeAttribute('aria-hidden');
+    label.removeAttribute('role');
+    errorText.setAttribute('aria-hidden', 'true');
+    errorText.removeAttribute('role');
+}
+
+function addError(formGroup, label, errorText) {
+    formGroup.classList.add('error');
+
+    const l = label.cloneNode(true);
+    const e = errorText.cloneNode(true);
+
+    const li = document.createElement("li");
+    li.setAttribute('role', 'alert');
+
+    li.appendChild(l);
+    li.appendChild(e);
+
+    errorList.appendChild(li);
+    errorDiv.setAttribute('aria-hidden', "false");
+
+    l.setAttribute('aria-hidden', 'false');
+    // l.setAttribute('role', 'alert');
+    e.setAttribute('aria-hidden', 'false');
+    e.classList.remove("hidden");
+    // e.setAttribute('role', 'alert');
 }
 
 /* validation */

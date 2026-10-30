@@ -25,7 +25,7 @@
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
         <input id="first-name" name="first-name" type="text" autocomplete="true" aria-describedby="first-name-required">
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="first-name-required">
             This field is required
           </p>
@@ -39,7 +39,7 @@
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
         <input id="last-name" name="last-name" type="text" autocomplete="true" aria-describedby="last-name-required">
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="last-name-required">
             This field is required
           </p>
@@ -56,7 +56,7 @@
         <p id="email-required" class="hidden" aria-hidden="true">
           This field is required
         </p>
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="email-validation">
             Please enter a valid email address
           </p>
@@ -85,7 +85,7 @@
         <p id="query-required" class="hidden" aria-hidden="true">
           This field is required
         </p>
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="query-validation">
             Please select a query type
           </p>
@@ -98,7 +98,7 @@
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
         <textarea name="message" id="message" aria-describedby="message-required"></textarea>
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="message-required">
             This field is required
           </p>
@@ -120,7 +120,7 @@
         <p id="consent-required" class="hidden" aria-hidden="true">
           This field is required
         </p>
-        <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
+        <div class="hidden validation error-text"  aria-hidden="true">
           <p id="consent-validation">
             To submit this form, please consent to being contacted
           </p>
@@ -130,9 +130,16 @@
       <button type="submit" class="submit">
         Submit
       </button>
+
+      <div role="alert" class="error-div hidden" aria-hidden="true">
+        <p>Form did not submit.</p>
+        <ul role="list">
+          <p>Error Text</p>
+        </ul>
+      </div>
     </form>
 
-    <section class="success hidden" aria-hidden="true" aria-live="polite">
+    <section role="alert" class="success hidden" aria-hidden="true">
       <p class="state">
         Message Sent!
       </p>

@@ -243,7 +243,7 @@ form {
         background: var(--green-200);
     }
 
-    .submit:hover {
+    .submit:hover, .submit:active {
         background: color-mix(in srgb, var(--green-600) 100%, black 75%);
     }
 
