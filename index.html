@@ -24,7 +24,7 @@
           First Name
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
-        <input id="first-name" name="first-name" type="text" aria-describedby="first-name-required">
+        <input id="first-name" name="first-name" type="text" autocomplete="true" aria-describedby="first-name-required">
         <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
           <p id="first-name-required">
             This field is required
@@ -38,7 +38,7 @@
           Last Name
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
-        <input id="last-name" name="last-name" type="text" aria-describedby="last-name-required">
+        <input id="last-name" name="last-name" type="text" autocomplete="true" aria-describedby="last-name-required">
         <div class="hidden validation error-text" aria-hidden="true" aria-live="polite">
           <p id="last-name-required">
             This field is required
@@ -52,7 +52,7 @@
           Email Address
           <span class="required" aria-hidden="true" class="required">*</span>
         </label>
-        <input id="email" name="email" type="text" aria-describedby="email-required">
+        <input id="email" name="email" type="text" autocomplete="true" aria-describedby="email-required">
         <p id="email-required" class="hidden" aria-hidden="true">
           This field is required
         </p>
@@ -64,7 +64,7 @@
       </div>
 
       <div class="form-group">
-        <fieldset aria-describedby="query-required">
+        <fieldset id="query-radio-group" aria-describedby="query-required" data-group="query">
           <legend>
             Query Type
             <span class="required" aria-hidden="true" class="required">*</spa>
@@ -132,10 +132,9 @@
       </button>
     </form>
 
-    <section class="success" aria-live="polite">
+    <section class="success hidden" aria-hidden="true" aria-live="polite">
       <p class="state">
         Message Sent!
-        
       </p>
       <p class="message">
         Thanks for completing the form. We'll be in touch soon!

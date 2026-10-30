@@ -293,6 +293,7 @@ form {
         display: flex;
         flex-direction: row;
         align-items: center;
+        font-weight: var(--karla-bold);
 
         &:before {
             content: url("../assets/images/icon-success-check.svg");
