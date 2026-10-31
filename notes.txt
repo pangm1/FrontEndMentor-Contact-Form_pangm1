@@ -2,8 +2,9 @@ test functionality of form using screenreader, keyboard, and mouse
 finish styling success toast message
 style for desktop sizes
 perform validation and update error/required states (JS)
-test using mobile
-implement CSS variables for the template
 make emails case-insensitive
-add animations to state changes
 use invisible error list on role="alert" to announce the error in NVDA (copy text from label and error text);
+
+implement CSS variables for the template
+add animations to state changes
+test using mobile
