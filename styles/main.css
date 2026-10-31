@@ -360,6 +360,16 @@ form {
 
     @media (min-height: 70rem) {
         .success {
+            &[hidden], &.hidden {
+                inset-block-start: -1rem;
+            }
+            --transition-time: 1s;
+
+            @media (prefers-reduced-motion: reduce) {
+                --transition-time: 0s;
+            }
+            transition: all var(--transition-time) ease-out;
+
             position: absolute;
             inset-block-start: 1rem;
         }

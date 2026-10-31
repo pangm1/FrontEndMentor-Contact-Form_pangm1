@@ -88,9 +88,8 @@ function validateInput(test) {
         try {
             resetError(formGroup, label, errorText);
 
-
             const result = test(event.detail.value);
-            console.log("Result: ", result);
+            // console.log("Result: ", result);
 
             if (!result) {
                 throw new Error();
@@ -142,7 +141,7 @@ lastName.addEventListener('validate', validateInput(val => {
     return val?.trim();
 }));
 email.addEventListener('validate', validateInput(val => {
-    console.log("Email:", val);
+    // console.log("Email:", val);
     return validateEmail(val?.trim());
 }));
 query.addEventListener('validate', validateInput(val => {

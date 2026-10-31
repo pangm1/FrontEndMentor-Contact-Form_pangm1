@@ -8,3 +8,5 @@ use invisible error list on role="alert" to announce the error in NVDA (copy tex
 implement CSS variables for the template
 add animations to state changes
 test using mobile
+
+fix animation of popup so it goes in and out (using keyframes)
